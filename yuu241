@@ -1,0 +1,27 @@
+import tweepy
+import time
+
+# Authenticate to Twitter
+auth = tweepy.OAuthHandler('API_KEY', 'API_SECRET_KEY')
+auth.set_access_token('ACCESS_TOKEN', 'ACCESS_TOKEN_SECRET')
+
+api = tweepy.API(auth)
+
+# Function to post a tweet
+def post_tweet(tweet_text):
+    try:
+        api.update_status(tweet_text)
+        print(f"Tweet posted: {tweet_text}")
+    except Exception as e:
+        print(f"Error posting tweet: {e}")
+
+# Schedule tweets
+tweets = [
+    "This is my first scheduled tweet!",
+    "Another tweet coming through!",
+    "Check out this cool content!"
+]
+
+for tweet in tweets:
+    post_tweet(tweet)
+    time.sleep(60 * 60)  # Wait 1 hour between each tweet
