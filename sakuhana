@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet on Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #4a90e2;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+    </style>
+    <script>
+        function tweetOnEntry() {
+            // Simulate entering the dormitory by triggering a button click or event listener
+            const tweetText = "I just entered the dormitory! #DormLife #CollegeVibes";
+            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+            window.open(tweetUrl, '_blank');
+        }
+
+        // Automatically trigger the tweet when the page loads (simulating entering the dormitory)
+        window.onload = function() {
+            tweetOnEntry();
+        };
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Dormitory!</h1>
+        <p>Automatically tweeting your entry...</p>
+
+        <!-- Optionally, you can have a manual button for testing purposes -->
+        <button onclick="tweetOnEntry()">Tweet My Entry</button>
+    </div>
+</body>
+</html>
