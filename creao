@@ -1,3 +1,28 @@
-<h1>拡散用ページにようこそ</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet on Entry</title>
+    <script>
+        function tweetOnEntry() {
+            // Simulate entering the dormitory by triggering a button click or event listener
+            const tweetText = "I just entered the dormitory! #DormLife #CollegeVibes";
+            const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+            window.open(tweetUrl, '_blank');
+        }
 
-<a>拡散用ページにようこそ＜/a>
+        // Automatically trigger the tweet when the page loads (simulating entering the dormitory)
+        window.onload = function() {
+            tweetOnEntry();
+        };
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Dormitory!</h1>
+    <p>Automatically tweeting your entry...</p>
+
+    <!-- Optionally, you can have a manual button for testing purposes -->
+    <button onclick="tweetOnEntry()">Tweet My Entry</button>
+</body>
+</html>
